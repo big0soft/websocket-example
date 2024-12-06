@@ -1,0 +1,9 @@
+
+d
+java:S11928"IDefine a constant instead of duplicating this literal "onOpen: " 3 times.(Á–ùÿÿÿÿ
+k
+java:S1450"URemove the "client" field and declare it as a local variable in the relevant methods.(¾ß¾™
+Q	java:S125"<This block of commented-out lines of code should be removed.(¢É’Ù
+P	java:S125="<This block of commented-out lines of code should be removed.(«À½^
+@	java:S106M"+Replace this use of System.out by a logger.(ò³ÌÏ
+Q	java:S125S"<This block of commented-out lines of code should be removed.(·¥

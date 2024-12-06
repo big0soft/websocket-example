@@ -1,0 +1,23 @@
+
+X	java:S125#"<This block of commented-out lines of code should be removed.(œÖ‘8–¿‰¦1
+I
+java:S1602&",Remove useless curly braces around statement(õ‚™8í»¿‰¦1
+S
+java:S18540"6Remove this useless assignment to local variable "ws".(ŒôÜø8Ù¦È‰¦1
+D
+java:S14810"'Remove this unused "ws" local variable.(ŒôÜø8Û¦È‰¦1
+]	java:S125I"<This block of commented-out lines of code should be removed.(ÕüÊ²ûÿÿÿÿ8ô»¿‰¦1
+]	java:S125L"<This block of commented-out lines of code should be removed.(¡÷ÉÚÿÿÿÿÿ8ô»¿‰¦1
+]	java:S125S"<This block of commented-out lines of code should be removed.(Áç–´üÿÿÿÿ8ô»¿‰¦1
+N
+java:S1602_",Remove useless curly braces around statement(ç‘‹ôüÿÿÿÿ8õ»¿‰¦1
+]	java:S125u"<This block of commented-out lines of code should be removed.(ä®ßôùÿÿÿÿ8ø»¿‰¦1
+F
+java:S1185‚"(Remove this method to simply inherit it.(ÍÙ÷¢8ø»¿‰¦1
+Y	java:S125…"<This block of commented-out lines of code should be removed.(¿ñ‚¤8ù»¿‰¦1
+P
+java:S1068"3Remove this unused "webSocketClient" private field.(ùÅ 8Ÿ–¿‰¦1
+R
+java:S11444"5Remove this unused private "connectWebSocket" method.(Û•´¿8ù»¿‰¦1
+M
+java:S1144s"0Remove this unused private "sendMessage" method.(Å¦¸õ8ù»¿‰¦1
