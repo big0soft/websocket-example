@@ -2,23 +2,14 @@ package com.big0soft.websocket.echo;
 
 import static com.big0soft.websocket.echo.RestClient.ANDROID_EMULATOR_LOCALHOST;
 
-import android.Manifest;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.icu.text.SimpleDateFormat;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,8 +17,6 @@ import com.big0soft.websocket.NotificationReceiver;
 import com.big0soft.websocket.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
-import org.java_websocket.server.WebSocketServer;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -63,7 +52,6 @@ public class EchoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_echo);
 
-        createNotificationChannel();
         mRecyclerView = findViewById(R.id.recycler_view);
         mAdapter = new SimpleAdapter(mDataSet);
         mAdapter.setHasStableIds(true);
@@ -75,50 +63,10 @@ public class EchoActivity extends AppCompatActivity {
         mStompClient = Stomp.over(Stomp.ConnectionProvider.OKHTTP, "ws://" + ANDROID_EMULATOR_LOCALHOST
                 + ":" + RestClient.SERVER_PORT + "/example-endpoint/websocket");
 
-        requestNotificationPermission();
         resetSubscriptions();
 
     }
 
-    private void createNotificationChannel() {
-        NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-
-// The id of the channel.
-        String id = "my_channel";
-
-// The user-visible name of the channel.
-        CharSequence name = "asdasd";
-
-// The user-visible description of the channel.
-        String description = "channel_description";
-
-        int importance = NotificationManager.IMPORTANCE_LOW;
-
-        NotificationChannel mChannel = new NotificationChannel(id, name,importance);
-
-// Configure the notification channel.
-        mChannel.setDescription(description);
-
-        mChannel.enableLights(true);
-// Sets the notification light color for notifications posted to this
-// channel, if the device supports this feature.
-        mChannel.setLightColor(Color.RED);
-
-        mChannel.enableVibration(true);
-        mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
-
-        mNotificationManager.createNotificationChannel(mChannel);
-    }
-
-    private void requestNotificationPermission() {
-        // Check if notification permission is granted
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                // Request notification permission
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, REQUEST_NOTIFICATION_PERMISSION);
-            }
-        }
-    }
 
 
     public void disconnectStomp(View view) {
@@ -253,3 +201,4 @@ public class EchoActivity extends AppCompatActivity {
         super.onDestroy();
     }
 }
+
